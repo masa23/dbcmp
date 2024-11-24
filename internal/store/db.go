@@ -424,6 +424,17 @@ func (db *DB) Version() (*semver.Version, error) {
 		return nil, err
 	}
 
+	// ubuntuを含んでいる場合、-0ubuntu0.24.04.1を取り除く
+	// mysql> SELECT VERSION();
+	//+-------------------------+
+	//| VERSION()               |
+	//+-------------------------+
+	//| 8.0.40-0ubuntu0.24.04.1 |
+	//+-------------------------+
+	if strings.Contains(vs, "ubuntu") {
+		vs = strings.Split(vs, "-")[0]
+	}
+
 	ver, err := semver.ParseTolerant(vs)
 	if err != nil {
 		return nil, err
