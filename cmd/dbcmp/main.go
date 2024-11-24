@@ -6,7 +6,7 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/mattermost/dbcmp/internal/store"
+	"github.com/masa23/dbcmp/internal/store"
 	"github.com/spf13/cobra"
 
 	_ "github.com/go-sql-driver/mysql"

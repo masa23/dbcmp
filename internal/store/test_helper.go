@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/brianvoe/gofakeit/v6"
-	"github.com/mattermost/dbcmp/internal/testlib"
+	"github.com/masa23/dbcmp/internal/testlib"
 	"github.com/stretchr/testify/require"
 )
 
